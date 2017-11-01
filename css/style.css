@@ -1,0 +1,155 @@
+	* { 
+			margin: 0; 
+			padding: 0;
+		}
+		
+		
+		body { 
+			font: 100% normal Arial, Helvetica, sans-serif; 
+			background: #262626;
+		}
+		form, input, textarea{
+			color: #ffffff;
+		}
+		
+		form{
+			display: block;
+		}
+		
+		input:required:invalid, textarea:required:invalid{
+			outline-color:red;
+			outline-width:thin;
+		}
+
+		.form-success{
+			margin: auto;
+			color: #ffffff;
+			margin-top: 100px;
+			font-size:20px;
+			text-align:center;
+			padding:10px 10px;
+			width:500px;
+			background:#262626;
+			border-bottom: 1px solid #CC0000;
+			border-top: 1px solid #CC0000;
+			border-left:1px solid #CC0000;
+			border-right:1px solid #CC0000;
+		}
+		
+		.form-error{
+			margin: auto;
+			color: #ffffff;
+			margin-top: 10px;
+			text-align:center;
+			padding:10px 10px;
+			width:500px;
+			background:#262626;
+			border-bottom: 1px solid #CC0000;
+			border-top: 1px solid #CC0000;
+			border-left:1px solid #CC0000;
+			border-right:1px solid #CC0000;
+			
+			
+		}
+ 
+		.container {
+			height:65%;
+			margin: auto;
+			width:500px;
+			background:#222222;
+			position:relative;
+			top:20px;
+			border:1px solid #262626;
+		}
+ 
+		.container h1 { 
+			background-color: #8C1717;
+			color:#ffffff;
+			font-size:18px;
+			text-align: center;
+			padding:5px 0 5px 5px;
+			border-bottom:1px solid #161712;
+			border-top:1px solid #161712; 
+		}
+ 
+		.container label {
+			color:#bbbbbb;
+			width:100%;
+			display: block;
+			background:#1C1C1C;
+			border-top:1px solid #262626;
+			border-bottom:1px solid #161712;
+			padding:10px 0 10px 0;
+		}
+		
+		.container label span{
+			font-size:14px;
+		}
+ 
+		.text{
+			display: block;
+			color:#bbbbbb;
+			font-size:12px;
+			float:left;
+			width:100px;
+			text-align:right;
+			padding:5px 20px 0 0;
+		}
+		
+		.container .message {
+			resize:none;
+			padding:7px 7px;
+			width:350px;
+			background:#262626;
+			border-bottom: 1px double #171717;
+			border-top: 1px double #171717;
+			border-left:1px double #333333;
+			border-right:1px double #333333;
+			overflow:hidden;
+			height:130px;
+		}
+ 
+		
+		.container .input_math{
+			color:#bbbbbb;
+			padding:5px 5px;
+			width:20px;
+			background:#262626;
+			border-bottom: 1px double #171717;
+			border-top: 1px double #171717;
+			border-left:1px double #333333;
+			border-right:1px double #333333;
+			
+		}			
+		.container .input_form {
+			color:#bbbbbb;
+			padding:5px 5px;
+			width:200px;
+			background:#262626;
+			border-bottom: 1px double #171717;
+			border-top: 1px double #171717;
+			border-left:1px double #333333;
+			border-right:1px double #333333;
+		}
+ 
+		
+ 
+		.container .button	{
+			margin:0 0 10px 0;
+			padding:4px 7px;
+			background:#8C1717;
+			border:0px;
+			position: relative;
+			top:10px;
+			left:382px;
+			width:100px;
+			border-bottom: 1px double #8C1717;
+			border-top: 1px double #8C1717;
+			border-left:1px double #8C1717;
+			border-right:1px double #8C1717;
+		}
+		
+		.wp-image{
+			margin-top: 5%;
+			height:250px;
+		}
