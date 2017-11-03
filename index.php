@@ -1,3 +1,8 @@
+<?php
+include "ads.php";
+?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -48,11 +53,13 @@
 			</fieldset>
 		</form>	
 
-
-		
-		
-		<center><a href='http://www.smedyczny.pl/uroda/breast-fast/'> <img class="wp-image" src="https://breastfast.pl/images/slideshow_1.jpg"></a></center>
-
+	<?php
+		foreach($ads_rand as $key => $value) { 
+	?>
+		<center><a href='<?php echo $value?>'> <img class="wp-image" src="<?php echo $key?>"></a></center>
+	<?php
+		}
+	?>
 		
     </body>
 </html>
