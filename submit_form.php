@@ -1,8 +1,8 @@
 <?php
 
-require_once 'PHPMailer.php';
-require_once 'SMTP.php';
-require_once 'Exception.php';
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
+require_once 'PHPMailer/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 $_POST = array_map('trim', $_POST);
 
 
-if (!isset($_POST['name']) || $_POST['name'] != '') return;
+if (!isset($_POST['name'])|| !empty($_POST['name'])) return;
 if (!isset($_POST['fname']) || empty($_POST['fname'])) return ;
 if (!isset($_POST['tnum']) || empty($_POST['tnum'])) return ;
 if (!isset($_POST['message']) || empty($_POST['message'])) return ;
@@ -28,18 +28,24 @@ $text=$fname.' '.$lname."\n\r numer telefonu: ".$tnum."\n\r adres email: ".$emai
 
 
 
-
-$mail = new PHPMailer(true);
-
-	$mail->CharSet = 'UTF-8';                                
-    $mail->isSMTP();
-	$mail->SMTPAutoTLS = false;	 
-    $mail->Host = 'smtp.poczta.onet.pl';  
+$mail = new PHPMailer();
+	
+	$mail->isSMTP();
+	$mail->CharSet = 'UTF-8';  
+	$mail->SMTPOptions = array(
+		'ssl' => array(
+		'verify_peer' => false,
+		'verify_peer_name' => false,
+		'allow_self_signed' => true
+		)
+	);	
+	$mail->Host = 'smtp.poczta.onet.pl'; 
+	$mail->Port = 587; 
+	$mail->SMTPSecure = 'tls'; 
     $mail->SMTPAuth = true;                               
     $mail->Username = 'test.test.test5@onet.pl';                 
-    $mail->Password = '';                                             
-    $mail->Port = 587;  
-	$mail->SetFrom('test.test.test5@onet.pl', 'srutututu');
+    $mail->Password = '';                                              
+	$mail->setFrom('test.test.test5@onet.pl', 'srutututu');
 	$mail->AddAddress('test.test.test5@onet.pl');
 	$mail->Subject = 'srutututu';
 	$mail->Body = $text;
